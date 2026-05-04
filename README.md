@@ -21,6 +21,21 @@ The generated captions encode crop identity together with phenotypic cues such a
 
 ![Agri-Semantics annotation examples](docs/figures/semantic_annotation_examples.png)
 
+## Zero-Shot Classification Comparison
+
+We evaluate CropVLM against CLIP-based baselines by encoding each crop class name once, encoding each test image, and assigning the class with the highest cosine similarity in the shared image-text embedding space. The table reports results on the held-out 37-class crop test split.
+
+| Model | Overall Accuracy (%) | Per-Class Mean +/- Std (%) |
+|---|---:|---:|
+| SigLIP 2 | 3.43 | 3.43 +/- 16.91 |
+| AgriCLIP | 4.04 | 4.04 +/- 14.61 |
+| RemoteCLIP | 42.52 | 42.52 +/- 27.57 |
+| BioCLIP | 48.33 | 48.34 +/- 34.95 |
+| BioTrove-CLIP | 51.07 | 51.07 +/- 36.20 |
+| BioCLIP 2 | 67.74 | 67.74 +/- 31.17 |
+| OpenAI CLIP ViT-B/32 | 70.24 | 70.24 +/- 28.83 |
+| **CropVLM** | **72.51** | **72.51 +/- 29.71** |
+
 ## Installation
 
 Create an environment and install the dependencies:

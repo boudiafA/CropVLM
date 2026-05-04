@@ -1,0 +1,51 @@
+{
+  "selection_method": "CropVLM was run on the full testing dataset. Examples were selected from correct predictions by descending cosine margin between the correct class and the second-highest class, preferring less-common crops and keeping at most one image per class.",
+  "score_type": "cosine similarity after L2-normalizing image and text embeddings",
+  "examples": [
+    {
+      "file": "cacao.png",
+      "source": "/mnt/e/Desktop/Datasets/FruitDataset/Crop_Dataset_testing/cacao/cacao_01171.png",
+      "class": "cacao",
+      "top1_score": 0.336548,
+      "second_class": "mango",
+      "second_score": 0.218446,
+      "margin": 0.118102
+    },
+    {
+      "file": "olive.png",
+      "source": "/mnt/e/Desktop/Datasets/FruitDataset/Crop_Dataset_testing/olive/olive_01140.png",
+      "class": "olive",
+      "top1_score": 0.329435,
+      "second_class": "peas",
+      "second_score": 0.215531,
+      "margin": 0.113904
+    },
+    {
+      "file": "cauliflower.png",
+      "source": "/mnt/e/Desktop/Datasets/FruitDataset/Crop_Dataset_testing/cauliflower/cauliflower_01107.png",
+      "class": "cauliflower",
+      "top1_score": 0.355567,
+      "second_class": "cucumber",
+      "second_score": 0.246063,
+      "margin": 0.109503
+    },
+    {
+      "file": "sugarcane.png",
+      "source": "/mnt/e/Desktop/Datasets/FruitDataset/Crop_Dataset_testing/sugarcane/sugarcane_01134.png",
+      "class": "sugarcane",
+      "top1_score": 0.334631,
+      "second_class": "rice",
+      "second_score": 0.226767,
+      "margin": 0.107864
+    },
+    {
+      "file": "sunflower.png",
+      "source": "/mnt/e/Desktop/Datasets/FruitDataset/Crop_Dataset_testing/sunflower/sunflower_01425.png",
+      "class": "sunflower",
+      "top1_score": 0.309900,
+      "second_class": "pineapple",
+      "second_score": 0.208610,
+      "margin": 0.101291
+    }
+  ]
+}

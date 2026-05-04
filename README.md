@@ -9,8 +9,6 @@ This repository contains:
 - a zero-shot evaluation script for ImageFolder-style datasets,
 - five strategically selected high-margin example images in `examples/`.
 
-The evaluation script intentionally excludes `tulip`, `eva_clip`, and `longclip`.
-
 ## Installation
 
 Create an environment and install the dependencies:
@@ -136,6 +134,5 @@ The mean and standard deviation are computed across per-class accuracies.
 
 ## Notes
 
-- `tulip`, `eva_clip`, and `longclip` are intentionally excluded from `scripts/evaluate_zero_shot.py`.
 - BioCLIP, BioCLIP2, BioTrove-CLIP, RemoteCLIP, and SigLIP2 weights are downloaded automatically by their libraries when first used.
 - The score used for classification is cosine similarity between normalized image and text embeddings.

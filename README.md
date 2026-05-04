@@ -2,12 +2,24 @@
 
 CropVLM is a CLIP-based zero-shot image classifier adapted for crop and fruit recognition. It compares one image embedding against text embeddings for candidate class names, then returns the class with the highest cosine similarity.
 
+![CropVLM framework overview](docs/figures/cropvlm_framework.png)
+
 This repository contains:
 
 - a simple CropVLM Python loader,
 - a Gradio demo for classifying one image,
 - a zero-shot evaluation script for ImageFolder-style datasets,
 - five strategically selected high-margin example images in `examples/`.
+
+## Agri-Semantics Data
+
+CropVLM is adapted with dense agricultural image-text supervision. The Agri-Semantics dataset spans 37 crop classes across fruits, vegetables, grains, and industrial crops, with examples covering visual diversity such as ripeness levels, varieties, and growth stages.
+
+![Agri-Semantics crop coverage](docs/figures/agri_semantics_coverage.png)
+
+The generated captions encode crop identity together with phenotypic cues such as ripeness, count, color, and spatial position.
+
+![Agri-Semantics annotation examples](docs/figures/semantic_annotation_examples.png)
 
 ## Installation
 

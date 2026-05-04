@@ -99,7 +99,7 @@ def build_demo(checkpoint: str, device: str | None, prompt_template: str, top_k:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--checkpoint", default="models/CropCLIP_FullDataset_Acc_0.75.pth")
+    parser.add_argument("--checkpoint", default="models/CropVLM.pth")
     parser.add_argument("--device", default=None)
     parser.add_argument("--prompt-template", default="{}")
     parser.add_argument("--top-k", type=int, default=5)

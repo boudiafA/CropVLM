@@ -336,7 +336,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", required=True, help="ImageFolder-style dataset root.")
     parser.add_argument("--output", default="outputs/zero_shot_results.json")
-    parser.add_argument("--cropvlm-checkpoint", default="models/CropCLIP_FullDataset_Acc_0.75.pth")
+    parser.add_argument("--cropvlm-checkpoint", default="models/CropVLM.pth")
     parser.add_argument("--models", nargs="+", default=DEFAULT_MODELS)
     parser.add_argument("--device", default=None)
     parser.add_argument("--batch-size", type=int, default=64)

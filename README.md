@@ -2,6 +2,8 @@
 
 CropVLM is a CLIP-based zero-shot image classifier adapted for crop and fruit recognition. It compares one image embedding against text embeddings for candidate class names, then returns the class with the highest cosine similarity.
 
+**Links:** [Model weights on Hugging Face](https://huggingface.co/boudiafA/CropVLM)
+
 ![CropVLM framework overview](docs/figures/cropvlm_framework.png)
 
 This repository contains:
@@ -58,10 +60,21 @@ pip install -r requirements.txt
 Place the CropVLM checkpoint here:
 
 ```text
-models/CropCLIP_FullDataset_Acc_0.75.pth
+models/CropVLM.pth
 ```
 
-The checkpoint is not included in this repository because it is large. You can also keep it anywhere else and pass its path with `--checkpoint` or `--cropvlm-checkpoint`.
+The checkpoint is hosted on Hugging Face because it is large:
+
+```python
+from huggingface_hub import hf_hub_download
+
+checkpoint = hf_hub_download(
+    repo_id="boudiafA/CropVLM",
+    filename="models/CropVLM.pth",
+)
+```
+
+You can also download it manually from [boudiafA/CropVLM](https://huggingface.co/boudiafA/CropVLM) and place it at `models/CropVLM.pth`, or pass any local checkpoint path with `--checkpoint` or `--cropvlm-checkpoint`.
 
 ## Gradio Demo
 
@@ -69,7 +82,7 @@ Run:
 
 ```bash
 python scripts/gradio_demo.py \
-  --checkpoint models/CropCLIP_FullDataset_Acc_0.75.pth
+  --checkpoint models/CropVLM.pth
 ```
 
 Then open:
@@ -96,7 +109,7 @@ The included examples are `cacao`, `olive`, `cauliflower`, `sugarcane`, and `sun
 from PIL import Image
 from cropvlm import load_cropvlm
 
-classifier = load_cropvlm("models/CropCLIP_FullDataset_Acc_0.75.pth")
+classifier = load_cropvlm("models/CropVLM.pth")
 image = Image.open("examples/cacao.png")
 
 for label, score in classifier.predict(image, top_k=5):
@@ -121,7 +134,7 @@ Run CropVLM and the supported comparison CLIP models:
 ```bash
 python scripts/evaluate_zero_shot.py \
   --dataset /mnt/e/Desktop/Datasets/FruitDataset/Crop_Dataset_testing \
-  --cropvlm-checkpoint models/CropCLIP_FullDataset_Acc_0.75.pth \
+  --cropvlm-checkpoint models/CropVLM.pth \
   --output outputs/zero_shot_results.json \
   --batch-size 64
 ```

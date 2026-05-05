@@ -2,7 +2,10 @@
 
 CropVLM is a CLIP-based zero-shot image classifier adapted for crop and fruit recognition. It compares one image embedding against text embeddings for candidate class names, then returns the class with the highest cosine similarity.
 
-**Links:** [Model weights on Hugging Face](https://huggingface.co/boudiafA/CropVLM)
+<p align="center">
+  <a href="https://arxiv.org/abs/XXXX.XXXXX"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b.svg" alt="Paper"></a>
+  <a href="https://huggingface.co/boudiafA/CropVLM"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Model-Hugging%20Face-FFD21E" alt="Model"></a>
+</p>
 
 ![CropVLM framework overview](docs/figures/cropvlm_framework.png)
 
@@ -55,9 +58,11 @@ pip install --index-url https://download.pytorch.org/whl/cu121 torch torchvision
 pip install -r requirements.txt
 ```
 
-## Checkpoint
+## Model
 
-Place the CropVLM checkpoint here:
+The CropVLM model weights are hosted on Hugging Face: [boudiafA/CropVLM](https://huggingface.co/boudiafA/CropVLM).
+
+Place the checkpoint here:
 
 ```text
 models/CropVLM.pth

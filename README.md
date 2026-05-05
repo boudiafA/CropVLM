@@ -121,6 +121,15 @@ for label, score in classifier.predict(image, top_k=5):
     print(label, score)
 ```
 
+Use custom candidate labels by passing them to `predict`:
+
+```python
+custom_labels = ["cacao", "coffee", "mango", "olive", "sunflower"]
+
+for label, score in classifier.predict(image, labels=custom_labels, top_k=5):
+    print(label, score)
+```
+
 ## Evaluate Zero-Shot Accuracy
 
 The dataset should be arranged like `torchvision.datasets.ImageFolder`:

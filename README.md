@@ -32,14 +32,16 @@ We evaluate CropVLM against CLIP-based baselines by encoding each crop class nam
 
 | Model | Overall Accuracy (%) | Per-Class Mean +/- Std (%) |
 |---|---:|---:|
-| SigLIP 2 | 3.43 | 3.43 +/- 16.91 |
-| AgriCLIP | 4.04 | 4.04 +/- 14.61 |
+| AgriCLIP | 3.64 | 3.64 +/- 12.69 |
 | RemoteCLIP | 42.52 | 42.52 +/- 27.57 |
 | BioCLIP | 48.33 | 48.34 +/- 34.95 |
 | BioTrove-CLIP | 51.07 | 51.07 +/- 36.20 |
 | BioCLIP 2 | 67.74 | 67.74 +/- 31.17 |
 | OpenAI CLIP ViT-B/32 | 70.24 | 70.24 +/- 28.83 |
 | **CropVLM** | **72.51** | **72.51 +/- 29.71** |
+| SigLIP 2 | 92.51 | 92.51 +/- 16.61 |
+
+SigLIP 2 is reported with fixed 64-token text padding, following the official SigLIP2 preprocessing requirement. AgriCLIP is reported using its official `Agri_Dino_aligner_DPT_CPT.pth` aligned checkpoint; because AgriCLIP is a DINO-to-CLIP alignment pipeline rather than a standard CLIP-style encoder, this result should be interpreted cautiously.
 
 ## Installation
 

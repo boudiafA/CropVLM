@@ -163,7 +163,13 @@ class Siglip2Adapter(Adapter):
         self.model = AutoModel.from_pretrained(self.name).to(device).eval()
 
     def encode_text(self, prompts: Sequence[str]) -> torch.Tensor:
-        inputs = self.processor(text=list(prompts), padding=True, return_tensors="pt").to(self.device)
+        inputs = self.processor(
+            text=[prompt.lower() for prompt in prompts],
+            padding="max_length",
+            max_length=64,
+            truncation=True,
+            return_tensors="pt",
+        ).to(self.device)
         with torch.no_grad():
             if hasattr(self.model, "get_text_features"):
                 features = self.model.get_text_features(**inputs)
